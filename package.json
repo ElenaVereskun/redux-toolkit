@@ -40,12 +40,5 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
     "vitest": "^1.2.0"
-  },
-  "prettier":"prettier-config-nick",
-  "lint-staged":{
-    "**/*.{js,jsx,ts,tsx}":[
-    "npx prettier --write",
-    "npx eslint --fix"
-    ]
-  }  
+  }
 }
