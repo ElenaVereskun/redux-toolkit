@@ -1,7 +1,8 @@
 // import styles from "./PandomKeys.module.css"
 
-import { useAppDispatch } from "../../../../app/hooks"
-import { setSteps } from "../../store/slices"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import { MAP_ARROW_CODES } from "../../constants"
+import { IMapArrowCodes } from "../../types"
 
 export interface IPandomKeysProps {
   isTimerActive: boolean
@@ -10,11 +11,14 @@ export interface IPandomKeysProps {
 const PandomKeys: React.FC<IPandomKeysProps> = props => {
   const { isTimerActive } = props
 
-  const dispatch = useAppDispatch()
-
+  const state = useAppSelector(state => state.playground)
   return (
     <div>
-      <button onClick={() => dispatch(setSteps())}>Click</button>
+      {state.steps.map((element, index) => (
+        <span key={index}>
+          {MAP_ARROW_CODES[element.currentValue as keyof IMapArrowCodes]}
+        </span>
+      ))}
     </div>
   )
 }

@@ -2,8 +2,11 @@ import { createSlice } from "@reduxjs/toolkit"
 
 import { IPlaygroundState } from "./types"
 
+import { ARR_ARROW_CODES } from "../constants"
+
 export const initialState: IPlaygroundState = {
   currentStep: 0,
+  steps: [],
 }
 
 export const playgroundSiace = createSlice({
@@ -14,10 +17,43 @@ export const playgroundSiace = createSlice({
       state.currentStep += 1
     },
     setSteps: state => {
-      const randomKeys = Math.floor(Math.random() * 4)
-      console.log(randomKeys)
+      const randomKeys = Math.floor(Math.random() * ARR_ARROW_CODES.length)
+
+      state.steps.push({
+        step: state.currentStep,
+        currentValue: ARR_ARROW_CODES[randomKeys],
+        enteredValue: null,
+        success: null,
+      })
+    },
+    setEnteredValue: (state, action) => {
+      if (state.steps.length) {
+        const step = state.steps[state.currentStep - 1]
+        const isSuccess = step.currentValue === action.payload
+
+        if (step.enteredValue === null) {
+          state.steps[state.currentStep - 1] = {
+            ...step,
+            enteredValue: action.payload,
+            success: isSuccess,
+          }
+        }
+      }
+    },
+    setUnsuccess: state => {
+      if (state.steps.length) {
+        const step = state.steps[state.currentStep - 1]
+
+        if (step.enteredValue == null) {
+          state.steps[state.currentStep - 1] = {
+            ...step,
+            success: false,
+          }
+        }
+      }
     },
   },
 })
-export const { setCurrentStep, setSteps } = playgroundSiace.actions
+export const { setCurrentStep, setSteps, setEnteredValue, setUnsuccess } =
+  playgroundSiace.actions
 export default playgroundSiace.reducer
