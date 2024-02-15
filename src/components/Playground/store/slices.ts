@@ -7,6 +7,8 @@ import { ARR_ARROW_CODES } from "../constants"
 export const initialState: IPlaygroundState = {
   currentStep: 0,
   steps: [],
+  totalSuccessful: 0,
+  totalUnsuccessful: 0,
 }
 
 export const playgroundSiace = createSlice({
@@ -38,6 +40,13 @@ export const playgroundSiace = createSlice({
             success: isSuccess,
           }
         }
+
+        if (isSuccess) {
+          state.totalSuccessful += 1
+        } else {
+          state.totalUnsuccessful += 1
+          state.totalSuccessful = 0
+        }
       }
     },
     setUnsuccess: state => {
@@ -45,6 +54,9 @@ export const playgroundSiace = createSlice({
         const step = state.steps[state.currentStep - 1]
 
         if (step.enteredValue == null) {
+          state.totalUnsuccessful += 1
+          state.totalSuccessful = 0
+
           state.steps[state.currentStep - 1] = {
             ...step,
             success: false,
@@ -52,8 +64,14 @@ export const playgroundSiace = createSlice({
         }
       }
     },
+    resetStore: () => initialState,
   },
 })
-export const { setCurrentStep, setSteps, setEnteredValue, setUnsuccess } =
-  playgroundSiace.actions
+export const {
+  setCurrentStep,
+  setSteps,
+  setEnteredValue,
+  setUnsuccess,
+  resetStore,
+} = playgroundSiace.actions
 export default playgroundSiace.reducer
