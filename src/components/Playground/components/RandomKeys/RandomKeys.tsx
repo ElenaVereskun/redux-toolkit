@@ -1,8 +1,7 @@
-// import styles from "./PandomKeys.module.css"
+import { useAppSelector } from "../../../../app/hooks"
 
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
-import { MAP_ARROW_CODES } from "../../constants"
-import { IMapArrowCodes } from "../../types"
+import RandomArrows from "./components/RandomArrows"
+import WelcomeText from "./components/WelcomeText"
 
 export interface IPandomKeysProps {
   isTimerActive: boolean
@@ -12,13 +11,15 @@ const PandomKeys: React.FC<IPandomKeysProps> = props => {
   const { isTimerActive } = props
 
   const state = useAppSelector(state => state.playground)
+
   return (
     <div>
-      {state.steps.map((element, index) => (
-        <span key={index}>
-          {MAP_ARROW_CODES[element.currentValue as keyof IMapArrowCodes]}
-        </span>
-      ))}
+      <h3>RandomKeys</h3>
+      {state.steps.length === 0 ? (
+        <WelcomeText isTimerActive={isTimerActive} />
+      ) : (
+        <RandomArrows />
+      )}
     </div>
   )
 }
