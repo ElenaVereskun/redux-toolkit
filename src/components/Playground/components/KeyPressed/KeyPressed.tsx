@@ -1,4 +1,4 @@
-// import styles from "./KeyPressed.module.css"
+import styles from "./KeyPressed.module.css"
 
 import { useEffect, useCallback } from "react"
 import { useAppDispatch } from "../../../../app/hooks"
@@ -35,9 +35,11 @@ const KeyPressed: React.FC<IKeyPressedProps> = props => {
   })
 
   return (
-    <div>
-      <TypographyHeader>KeyPressed</TypographyHeader>
-      <span>{keyPressedElement}</span>
+    <div className={styles.container}>
+      <TypographyHeader>Нажать кнопку, увиденную в окне</TypographyHeader>
+      <div className={styles.wrapper}>
+        <span className={styles.icon}>{keyPressedElement}</span>
+      </div>
     </div>
   )
 }

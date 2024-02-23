@@ -1,9 +1,8 @@
-.icon{
-    background-color: rgb(202, 213, 223);
-}
 .iconSuccess{
-    background-color: rgb(170, 231, 211);
+    border:1px solid var(--color-green);
+    background-color: var(--color-green-light);
 }
 .iconUnsuccess{
-    background-color: rgb(211, 147, 147);
+    border:1px solid var(--color-red);
+    background-color: var(--color-red-light);
 }
