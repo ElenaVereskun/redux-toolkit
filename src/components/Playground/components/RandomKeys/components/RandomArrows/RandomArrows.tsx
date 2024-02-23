@@ -3,6 +3,7 @@ import { MAP_ARROW_CODES } from "../../../../constants"
 import type { IPlayGroundStepsState } from "../../../../store/types"
 import { useAppSelector } from "../../../../../../app/hooks"
 import type { IMapArrowCodes } from "../../../../types"
+import { TypographyText } from "../../../../../UI"
 
 const RandomArrows: React.FC = () => {
   const getStylesRandomKeys = (element: IPlayGroundStepsState): string => {
@@ -20,9 +21,9 @@ const RandomArrows: React.FC = () => {
   return (
     <div>
       {state.steps.map(element => (
-        <span key={element.step} className={getStylesRandomKeys(element)}>
+        <TypographyText key={element.step} className={getStylesRandomKeys(element)}>
           {MAP_ARROW_CODES[element.currentValue as keyof IMapArrowCodes]}
-        </span>
+        </TypographyText>
       ))}
     </div>
   )
