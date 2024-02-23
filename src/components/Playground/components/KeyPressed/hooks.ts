@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../../../app/hooks"
 import { MAP_ARROW_CODES } from "../../constants"
-import { IMapArrowCodes } from "../../types"
+import type { IMapArrowCodes } from "../../types"
 
 export const useKeyPressedElement = (): string => {
   const state = useAppSelector(state => state.playground)

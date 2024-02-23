@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-import { IPlaygroundState } from "./types"
+import type { IPlaygroundState } from "./types"
 
 import { ARR_ARROW_CODES } from "../constants"
 

@@ -1,4 +1,4 @@
-import { IMapArrowCodes, IEndGameConditions } from "./types"
+import type { IMapArrowCodes, IEndGameConditions } from "./types"
 export const INTERVAL_TIME: number = 2000
 
 export const MAP_ARROW_CODES: IMapArrowCodes = {

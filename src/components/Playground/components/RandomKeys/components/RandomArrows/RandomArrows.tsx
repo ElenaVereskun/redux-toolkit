@@ -1,8 +1,8 @@
 import styles from "./RandomArrows.module.css"
 import { MAP_ARROW_CODES } from "../../../../constants"
-import { IPlayGroundStepsState } from "../../../../store/types"
+import type { IPlayGroundStepsState } from "../../../../store/types"
 import { useAppSelector } from "../../../../../../app/hooks"
-import { IMapArrowCodes } from "../../../../types"
+import type { IMapArrowCodes } from "../../../../types"
 
 const RandomArrows: React.FC = () => {
   const getStylesRandomKeys = (element: IPlayGroundStepsState): string => {
