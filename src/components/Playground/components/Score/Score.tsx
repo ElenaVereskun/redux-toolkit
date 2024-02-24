@@ -7,15 +7,15 @@ import { Chip, Stack } from "@mui/material"
 const Score: React.FC = () => {
   const state = useAppSelector(state => state.playground)
   return (
-    <>
-      <TypographyHeader>Score</TypographyHeader>
-      <TypographyText>dddddddddddddd</TypographyText>
+    <div className={styles.container}>
+      <TypographyHeader>Подсчёт очков</TypographyHeader>
+      <TypographyText>Ввести правильно нужно именно ПОДРЯД . Если Вы ошибаетесь, счётчик обнуляется</TypographyText>
       <Stack direction='row' spacing={1}>
         <Chip
           className={styles.chipUnsuccess}
           label={
             <>
-              Errors:<span className={styles.counter}>
+              Ошибки:<span className={styles.counter}>
                 {state.totalUnsuccessful}</span>
             </>}
           variant="outlined" />
@@ -23,12 +23,12 @@ const Score: React.FC = () => {
           className={styles.chipSuccess}
           label={
             <>
-              Successful:<span className={styles.counter}>
+              Счёт:<span className={styles.counter}>
                 {state.totalSuccessful}</span>
             </>}
           variant="outlined" />
       </Stack>
-    </>
+    </div>
   )
 }
 

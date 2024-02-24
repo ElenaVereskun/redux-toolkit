@@ -15,7 +15,7 @@ const PandomKeys: React.FC<IPandomKeysProps> = props => {
 
   return (
     <div>
-      <TypographyHeader>RandomKeys</TypographyHeader>
+      <TypographyHeader> </TypographyHeader>
       {state.steps.length === 0 ? (
         <WelcomeText isTimerActive={isTimerActive} />
       ) : (

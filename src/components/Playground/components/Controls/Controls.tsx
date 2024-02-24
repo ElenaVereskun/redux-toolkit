@@ -11,7 +11,7 @@ const Controls: React.FC<IControlsProps> = props => {
   const { isTimerActive, setIsTimerActive } = props
 
   return (
-    <div>
+    <div className={styles.container}>
       <Button onClick={() => setIsTimerActive(true)}
         disabled={isTimerActive}
         endIcon={<PlayArrow />}

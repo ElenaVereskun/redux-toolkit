@@ -1,8 +1,22 @@
 .iconSuccess{
     border:1px solid var(--color-green);
     background-color: var(--color-green-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
 }
 .iconUnsuccess{
     border:1px solid var(--color-red);
     background-color: var(--color-red-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
 }

@@ -23,7 +23,7 @@ const WelcomeText: React.FC<IWelcomeTextProps> = props => {
 
   return (
     <TypographyText>
-      Press "Play" to start the game and wait for the first arrow to arrear
+      Нажмите "Play" для начала игры и ожидайте первую стрелку
     </TypographyText>
   )
 }

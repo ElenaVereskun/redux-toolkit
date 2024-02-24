@@ -10,12 +10,11 @@ import stylesCommon from '../../PandomKeys.module.css'
 const RandomArrows: React.FC = () => {
 
   const state = useAppSelector(state => state.playground)
-  
+
   const getStylesRandomKeys = (element: IPlayGroundStepsState): string => {
     return cn(
       element.success && element.success !== null && styles.iconSuccess,
-      !element.success && element.success !== null && styles.iconUnsuccess,
-      stylesCommon.icon,
+      !element.success && element.success !== null && styles.iconUnsuccess
     )
   }
 

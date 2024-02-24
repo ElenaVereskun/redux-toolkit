@@ -53,20 +53,18 @@ const Playground: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.column}>
-        {state.currentStep}
+        <Description />
         <Controls
           isTimerActive={isTimerActive}
           setIsTimerActive={setIsTimerActive}
         />
-        <RandomKeys isTimerActive={isTimerActive} />
-        <KeyPressed isTimerActive={isTimerActive} />
         <Score />
       </div>
       <div className={styles.column}>
-        <Description />
+        {/* {state.currentStep} */}
+        <RandomKeys isTimerActive={isTimerActive} />
+        <KeyPressed isTimerActive={isTimerActive} />        
       </div>
-
-
       {isShowModal && (
         <Modal
           setIsSHowModal={setIsSHowModal}

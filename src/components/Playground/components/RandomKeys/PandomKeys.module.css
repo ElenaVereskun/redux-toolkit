@@ -11,9 +11,9 @@
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    border: 1px solid rgb(210, 204, 204);
+    border: 1px solid var( --color-gray);
     border-radius: 50%;
-    background-color: rgb(210, 204, 204);
+    background-color:white;
     width: 55px;
     height: 55px;
 }
