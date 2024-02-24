@@ -27,6 +27,12 @@ const Playground: React.FC = () => {
         dispatch(setCurrentStep())
         dispatch(setSteps())
       }, INTERVAL_TIME)
+    } else {
+      clearInterval(refreshIntervalId.current as NodeJS.Timeout)
+    }
+
+    return () => {
+      clearInterval(refreshIntervalId.current as NodeJS.Timeout)
     }
   }, [isTimerActive, dispatch])
 
