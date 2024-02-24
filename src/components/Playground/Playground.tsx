@@ -27,11 +27,6 @@ const Playground: React.FC = () => {
         dispatch(setCurrentStep())
         dispatch(setSteps())
       }, INTERVAL_TIME)
-    } else {
-      clearInterval(refreshIntervalId.current as Node.Timeout)
-    }
-    return () => {
-      clearInterval(refreshIntervalId.current as Node.Timeout)
     }
   }, [isTimerActive, dispatch])
 
@@ -42,6 +37,7 @@ const Playground: React.FC = () => {
       state.totalUnsuccessful === END_GAME_CONDITIONS.UNSUCCESS_COUNT
 
     isSuccessful && setIsSuccessEndGame(true)
+
     isUnSuccessful && setIsSuccessEndGame(false)
 
     if (isSuccessful || isUnSuccessful) {
@@ -61,9 +57,9 @@ const Playground: React.FC = () => {
         <Score />
       </div>
       <div className={styles.column}>
-        {/* {state.currentStep} */}
+        {state.currentStep}
         <RandomKeys isTimerActive={isTimerActive} />
-        <KeyPressed isTimerActive={isTimerActive} />        
+        <KeyPressed isTimerActive={isTimerActive} />
       </div>
       {isShowModal && (
         <Modal
