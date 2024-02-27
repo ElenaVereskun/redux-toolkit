@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, ReactNode } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setCurrentStep, setSteps, setUnsuccess } from "./store/slices"
 import Controls from "./components/Controls"
