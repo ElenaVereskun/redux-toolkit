@@ -8,7 +8,7 @@ import Score from "./components/Score"
 import Modal from "./components/Modal"
 import { INTERVAL_TIME, END_GAME_CONDITIONS } from "./constants"
 import Description from "./components/Description"
-import styles from './Playground.module.css'
+import styles from "./Playground.module.css"
 
 const Playground: React.FC = () => {
   const state = useAppSelector(state => state.playground)
